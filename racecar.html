@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    img {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+    }
+
+    #car2 {
+      top: 285px;
+    }
+
+    h2 {
+      text-align: right;
+    }
+    div {
+      width: 100px;
+      height:100px;
+      background-color:purple;
+      left:600px;
+      top:250px;
+      position:absolute;
+      display: none;
+
+    }
+  
+  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Race Car</title>
+</head>
+
+<body>
+  <H1> Alphonso davies vs Kylian Mbappe Race </H1>
+  <p> </p>
+  <img id="car1" src="Alphonso Davies.jfif">
+  <img id="car2" src="Kylian Mbappe.jfif">
+  <div id="popup"> You Win</div>
+  
+  <h2 id="timer"> time: 0</h2>
+</body>
+
+</html>
+<script>
+
+
+  var time = 0
+  var car1 = document.getElementById("car1")
+  var x = 0
+  var y = 0
+  var car2 = document.getElementById("car2")
+  document.addEventListener("keydown", keydownHandler)
+  document.getElementById("popup").addEventListener("click",restart )
+  document.getElementById("timer").innerHTML = time;
+  function restart(){
+    time = 0
+    x = 0
+    y = 0
+  }
+  function keydownHandler(e) {
+    if ("a" === e.key) {
+      car1.style.left = x + "px"
+      x = x + 50
+      if( x >=400){
+        document.getElementById("popup").style.display="block"
+      }
+    }
+
+    if ("l" === e.key) {
+      car2.style.left = y + "px"
+      y = y + 50
+      if( y >=400){
+       document.getElementById("popup").style.display="block"
+      }
+    }
+  }
+  setInterval(timer,100)
+  function timer() {
+    document.getElementById("timer").innerHTML = time.toFixed(2);
+    time = time + .1
+
+  }
+</script>

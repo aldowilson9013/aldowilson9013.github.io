@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        img {
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="image"
+        src="https://eu-images.contentstack.com/v3/assets/bltcc7a7ffd2fbf71f5/blt2d5ea7c180eb31f0/60db22cc2446e93b5b623bfc/21a4e37bfa8a1b8871c6d19cc6862f9fbaa23bce.jpg?auto=webp&fit=crop&format=jpg&quality=100">
+    <p id="scoreid"> score = 0 </p>
+    <p id="upgrade">Aldo</p>
+    <p id="button1">button</p>
+</body>
+
+</html>
+<script>
+    var score = 0
+    document.getElementById("image").addEventListener("click", imageclick)
+    document.getElementById("upgrade").addEventListener("click", upgrade)
+    document.getElementById("button1").addEventListener("click", button)
+    function imageclick() {
+        score = score + 1
+        document.getElementById("scoreid").innerText = "score=" + score
+    }
+
+    function upgrade() {
+        if (score >= 5) {
+            score = score + -5
+            setInterval(multiplier, 500)
+
+        }
+    }
+    function multiplier() {
+        document.getElementById("scoreid").innerText = "score=" + score
+        score = score + 1
+    }
+
+    function button() {
+        if (score >= 5) {
+            score = score - 10
+            setInterval(multiplier, 500)
+
+        }
+    }
+
+
+
+</script>
