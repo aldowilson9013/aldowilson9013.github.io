@@ -1,0 +1,10 @@
+git add -A 
+
+git commit -m "put message here"
+
+git push
+
+
+take each line of this and paste it into the termenal, hit enter after each one
+
+if you don't see the terminal you can go to the hamburger menue at the top left, click on it > terminal > New Terminal
